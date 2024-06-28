@@ -1,0 +1,44 @@
+---
+import ArrowIcon from '../icons/ArrowIcon.astro';
+
+interface Props {
+	icon: string;
+	body: string;
+	href: string;
+}
+
+const { href, icon, body } = Astro.props;
+---
+
+<a class="link flex justify-center items-center gap-x-2" href={href} target="_blank">
+  {body}<ArrowIcon class="size-4 lg:size-6"/>
+</a>
+
+<style>
+  .link {
+    position: relative;
+    background-color: white;
+    color: var(--bgColor);
+    /*border: solid var(--accentColor) 2px;*/
+    border-radius: 20px;
+    font-size: 1rem;
+    text-align: center;
+    /* display: block;*/
+    padding: 10px; /* 17px */
+    text-decoration: none;
+    border: solid transparent 2px;
+    /* transition: all .25s cubic-bezier(.08, .59, .29, .99); */
+  }
+
+ .link:hover {
+    background-color: transparent;
+    color: var(--accentColor);
+    border: solid var(--accentColor) 2px;
+  }
+
+  .link:active {
+    background-color: transparent;
+    color: var(--accentColor);
+    border: solid var(--accentColor) 2px;
+  }
+</style>
